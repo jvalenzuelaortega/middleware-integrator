@@ -1,10 +1,10 @@
-package com.example.remunerationintegrator;
+package com.example.middleware;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RemunerationintegratorApplicationTests {
+class MiddlewareApplicationTests {
 
 	@Test
 	void contextLoads() {
