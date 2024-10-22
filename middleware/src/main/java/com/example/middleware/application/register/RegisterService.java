@@ -1,36 +1,35 @@
 package com.example.middleware.application.register;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 import org.springframework.stereotype.Service;
 
-import com.example.middleware.domain.entity.RegisterEntity;
-import com.example.middleware.domain.repository.RegisterRepository;
+import com.example.middleware.domain.entity.RegisterDocument;
+import com.example.middleware.domain.repository.RegisterMongoRepository;
+import reactor.core.publisher.Mono;
 
 @Service
 public class RegisterService {
 
-	private RegisterRepository registerRepository;
-	public RegisterService(RegisterRepository registerRepository) {
-		this.registerRepository = registerRepository;
+	private final RegisterMongoRepository registerMongoRepository;
+	
+	public RegisterService(RegisterMongoRepository registerMongoRepository) {
+		this.registerMongoRepository = registerMongoRepository;
 	}
 	
-	public boolean keepRecordOfRequests(HashMap<String, String> parameters) {
-		RegisterEntity registerEntity = RegisterEntity.builder()
+	public Mono<RegisterDocument> saveRegisterDocument(HashMap<String, String> parameters) {
+		RegisterDocument registerEntity = RegisterDocument.builder()
 				.userName(parameters.get("username"))
 				.companyName(parameters.get("company"))
 				.period(parameters.get("period"))
 				.endpoint(parameters.get("endpoint"))
 				.responseCode(parameters.get("response-code"))
-				.responseDetail(parameters.get("responseDetail"))
+				.responseDetail(parameters.get("response-detail"))
+				.date(LocalDateTime.now().toString())
 				.build();
 		
-		RegisterEntity saveEntity = registerRepository.save(registerEntity);
-		if (saveEntity.getRegisterId() > 0) {
-			return true;
-		}
-		
-		return false;
+		return registerMongoRepository.insert(registerEntity);
 	}
 	
 }
