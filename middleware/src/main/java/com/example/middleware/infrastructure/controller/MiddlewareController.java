@@ -24,7 +24,7 @@ public class MiddlewareController {
 		this.meterRegistry = meterRegistry;
 	}
 
-	@GetMapping("/obtener-asistencia-por-trabajador")
+	@GetMapping("/obtener-asistencia-de-trabajadores")
 	public Mono<ResponseEntity<?>> getAssistanceByWorker(@RequestParam Map<String,String> allParams) {
 
 		Mono<CompanyDto> response = assistanceService.getAssistanceByWorker(allParams);
