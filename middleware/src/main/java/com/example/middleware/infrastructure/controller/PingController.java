@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.middleware.application.register.PingService;
+import com.example.middleware.application.ping.PingService;
 
 import reactor.core.publisher.Mono;
 

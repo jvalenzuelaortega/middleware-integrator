@@ -1,4 +1,4 @@
-package com.example.middleware.application.register;
+package com.example.middleware.application.ping;
 
 import org.springframework.stereotype.Service;
 import io.micrometer.core.instrument.Counter;

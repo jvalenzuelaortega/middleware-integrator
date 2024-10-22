@@ -1,0 +1,53 @@
+{
+  "empresa":{
+     "id":123,
+     "nombre":"Empresa Ejemplo S.A.",
+     "asistencia":{
+        "total_horas":160,
+        "horas_extras":10,
+        "asistencias":20,
+        "inasistencias":{
+           "por_licencia_medica":2,
+           "sin_justificacion":1,
+           "vacaciones":3
+        }
+     },
+     "detalles":[
+        {
+           "empleado_id":1,
+           "nombre_empleado":"Juan Pérez",
+           "fecha_de_inicio":"2024-10-01",
+           "fecha_de_termino":"2024-10-07",
+           "horas_totales_trabajadas":45,
+           "asistencia":"presente"
+        },
+        {
+           "empleado_id":2,
+           "nombre_empleado":"Roberto Gutierrez",
+           "fecha_de_inicio":"2024-10-01",
+           "fecha_de_termino":"2024-10-07",
+           "horas_totales_trabajadas":0,
+           "asistencia":"inasistencia",
+           "tipo":"licencia médica"
+        },
+        {
+           "empleado_id":3,
+           "nombre_empleado":"Ana Gómez",
+           "fecha_de_inicio":"2024-10-01",
+           "fecha_de_termino":"2024-10-07",
+           "horas_totales_trabajadas":45,
+           "asistencia":"presente",
+           "horas_extras":1
+        },
+        {
+           "empleado_id":4,
+           "nombre_empleado":"Ana Gómez",
+           "fecha_de_inicio":"2024-10-01",
+           "fecha_de_termino":"2024-10-07",
+           "horas_totales_trabajadas":0,
+           "asistencia":"inasistencia",
+           "tipo":"vacaciones"
+        }
+     ]
+  }
+}
