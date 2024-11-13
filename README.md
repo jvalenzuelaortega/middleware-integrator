@@ -1,0 +1,1 @@
+Middleware example [DEPRECATED]
